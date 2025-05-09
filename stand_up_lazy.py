@@ -8,7 +8,6 @@ from plyer import notification
 sit_mode = "sit down"
 stand_mode = "stand up"
 
-
 if hasattr(sys, '_MEIPASS'):
     # _MEIPASS is the temporary folder where PyInstaller extracts the bundle
     icon_path = os.path.join(sys._MEIPASS, 'stand_up_lazy.icns')
@@ -16,14 +15,18 @@ else:
     icon_path = './icons/stand_up_lazy.icns'  # Use this during development
     print(os.getcwd())
 
+
 class StandUpApp:
+
+
     def __init__(self, root):
         self.root = root
         self.root.title("Stand Up, Lazy!")
 
-        self.standing_time = tk.IntVar(value=10)  # Default standing time in minutes
-        self.sitting_time = tk.IntVar(value=50)  # Default sitting time in minutes
-
+        self.sitting_time_default = 50 # Default sitting time in minutes
+        self.standing_time_default = 10 # Default standing time in minutes
+        self.sitting_time = tk.IntVar(value=self.sitting_time_default)
+        self.standing_time = tk.IntVar(value=self.standing_time_default)  #
         self.timer_running = False
         self.current_mode = sit_mode
 
@@ -35,13 +38,15 @@ class StandUpApp:
     def create_widgets(self):
         # Frame to hold labels
         time_input_frame = tk.Frame(self.root)
-        time_input_frame.pack(pady=(1,0))
+        time_input_frame.pack(pady=(1, 0))
 
         # Labels and Entries for standing and sitting
         tk.Label(time_input_frame, text="Sitting:", width=7, font=("Helvetica", 10), anchor="e").pack(side=tk.LEFT, padx=(1,0), pady=(5, 0))
-        tk.Entry(time_input_frame, textvariable=self.standing_time, width=4, font=("Helvetica", 10)).pack(side=tk.LEFT, padx=(0,1), pady=(5, 0))
+        self.sitting_time_entry =  tk.Entry(time_input_frame, textvariable=self.sitting_time, width=4, font=("Helvetica", 10))
+        self.sitting_time_entry.pack(side=tk.LEFT, padx=(0,1), pady=(5, 0))
         tk.Label(time_input_frame, text="Standing:", width=7, font=("Helvetica", 10), anchor="e").pack(side=tk.LEFT, padx=(1,0), pady=(5, 0))
-        tk.Entry(time_input_frame, textvariable=self.sitting_time, width=4, font=("Helvetica", 10)).pack(side=tk.LEFT, padx=(0,1), pady=(5, 0))
+        self.standing_time_entry = tk.Entry(time_input_frame, textvariable=self.standing_time, width=4, font=("Helvetica", 10))
+        self.standing_time_entry.pack(side=tk.LEFT, padx=(0,1), pady=(5, 0))
 
 
         # Timer label with larger font size
@@ -95,16 +100,19 @@ class StandUpApp:
                 message=f"Please {self.current_mode} now.",
                 app_name="Stand Up, Lazy!",
                 app_icon=icon_path,
-                timeout=10
+                timeout=30
             )
         except:
-
             pass
 
     def reset(self):
         # Reset the application state
         self.timer_running = False
         self.current_mode = sit_mode
+        self.sitting_time_entry.delete(0, tk.END)
+        self.sitting_time_entry.insert(0, str(self.sitting_time_default))
+        self.standing_time_entry.delete(0, tk.END)
+        self.standing_time_entry.insert(0, str(self.standing_time_default))
         self.toggle_button.config(text="I sat down", state=tk.NORMAL)
         self.time_left_label.config(text="00:00")
 
@@ -118,6 +126,7 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = StandUpApp(root)
     root.mainloop()
+
 
 def main():
     root = tk.Tk()

@@ -1,0 +1,4 @@
+plyer==2.1.0
+pyobjus==1.2.3
+# Editable Git install with no remote (stand_up_lazy==0.1.0)
+-e /Users/scc/Development/stand_up_lazy
