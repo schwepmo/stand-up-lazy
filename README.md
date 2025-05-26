@@ -20,7 +20,11 @@ python stand_up_lazy.py
 ```
 
 ## Bundled application
-As having to run the application through python every time, you can also bundle it to an executable.
+As having to run the application through python every time, you can also bundle it into an executable.
+Make sure you install the build dependencies using:
+```
+poetry sync --with build
+```
 To build the bundle make sure you have pyinstaller installed and call:
 ```
 pyinstaller stand_up_lazy.spec

@@ -129,6 +129,7 @@ description = ""
 optional = false
 python-versions = "*"
 groups = ["main"]
+markers = "sys_platform == \"darwin\""
 files = [
     {file = "pyobjus-1.2.3-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:c67aaaa548a0f39a4463f4d09b7f70d77cf3d8795ac269e758d331da020cbd07"},
     {file = "pyobjus-1.2.3-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:53a79b1d07c6382c5f485400fac2c19cf3cd285aeabc06a26f55815d517d9409"},
@@ -154,14 +155,14 @@ files = [
 
 [[package]]
 name = "setuptools"
-version = "80.3.1"
+version = "80.8.0"
 description = "Easily download, build, install, upgrade, and uninstall Python packages"
 optional = false
 python-versions = ">=3.9"
 groups = ["build"]
 files = [
-    {file = "setuptools-80.3.1-py3-none-any.whl", hash = "sha256:ea8e00d7992054c4c592aeb892f6ad51fe1b4d90cc6947cc45c45717c40ec537"},
-    {file = "setuptools-80.3.1.tar.gz", hash = "sha256:31e2c58dbb67c99c289f51c16d899afedae292b978f8051efaf6262d8212f927"},
+    {file = "setuptools-80.8.0-py3-none-any.whl", hash = "sha256:95a60484590d24103af13b686121328cc2736bee85de8936383111e421b9edc0"},
+    {file = "setuptools-80.8.0.tar.gz", hash = "sha256:49f7af965996f26d43c8ae34539c8d99c5042fbff34302ea151eaa9c207cd257"},
 ]
 
 [package.extras]
@@ -173,7 +174,19 @@ enabler = ["pytest-enabler (>=2.2)"]
 test = ["build[virtualenv] (>=1.0.3)", "filelock (>=3.4.0)", "ini2toml[lite] (>=0.14)", "jaraco.develop (>=7.21) ; python_version >= \"3.9\" and sys_platform != \"cygwin\"", "jaraco.envs (>=2.2)", "jaraco.path (>=3.7.2)", "jaraco.test (>=5.5)", "packaging (>=24.2)", "pip (>=19.1)", "pyproject-hooks (!=1.1)", "pytest (>=6,!=8.1.*)", "pytest-home (>=0.5)", "pytest-perf ; sys_platform != \"cygwin\"", "pytest-subprocess", "pytest-timeout", "pytest-xdist (>=3)", "tomli-w (>=1.0.0)", "virtualenv (>=13.0.0)", "wheel (>=0.44.0)"]
 type = ["importlib_metadata (>=7.0.2) ; python_version < \"3.10\"", "jaraco.develop (>=7.21) ; sys_platform != \"cygwin\"", "mypy (==1.14.*)", "pytest-mypy"]
 
+[[package]]
+name = "sv-ttk"
+version = "2.6.0"
+description = "A gorgeous theme for Tkinter, based on Windows 11's UI"
+optional = false
+python-versions = ">=3.8"
+groups = ["main"]
+files = [
+    {file = "sv_ttk-2.6.0-py3-none-any.whl", hash = "sha256:4319c52edf2e14732fe84bdc9788e26f9e9a1ad79451ec0f89f0120ffc8105d9"},
+    {file = "sv_ttk-2.6.0.tar.gz", hash = "sha256:3fd440396c95e30e88f686fcf28be425480f7320d6bf346f9cea5d6f56702cc2"},
+]
+
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<3.14"
-content-hash = "5ca22f903a8df3d8f58feeed17d1d021d8a88882b5f72ae9553937c43778742c"
+content-hash = "bf7db3a347dc3e4102e19a6c892b2b62ed545a35f5e428818d2d61e63601e1ae"

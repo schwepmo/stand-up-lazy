@@ -3,21 +3,21 @@
 import platform
 
 hiddenimports = []
-icon = ''
+icon = ""
 if platform.system() == "Linux":
     hiddenimports = ["plyer.platforms.linux.notification"]
-    icon = './icons/stand_up_lazy.png'
+    icon = "./icons/stand_up_lazy.png"
 elif platform.system() == "Windows":
     hiddenimports = ["plyer.platforms.win.notification"]
-    icon = './icons/stand_up_lazy.ico'
+    icon = "./icons/stand_up_lazy.ico"
 elif platform.system() == "Darwin":
     hiddenimports = ['plyer.platforms.macosx.notification']
-    icon = './icons/stand_up_lazy.icns'
+    icon = "./icons/stand_up_lazy.icns"
 a = Analysis(
-    ['stand_up_lazy.py'],
+    ["stand_up_lazy.py"],
     pathex=[],
     binaries=[],
-    datas=[('./icons/stand_up_lazy.icns', '.')],
+    datas=[(icon, ".")],
     hiddenimports=hiddenimports,
     hookspath=[],
     hooksconfig={},
