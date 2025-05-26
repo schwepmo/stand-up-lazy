@@ -14,6 +14,7 @@ whenever you should change your pose.
 
 ## Usage
 Either use poetry or install the dependencies from the `requirements.txt`.
+In ann effort to make things run as stable as possible across multiple platforms, I set the required python version to be at 3.13 and you require a tkinter version of 8.X.
 Afterward you should be able to start the application using:
 ```
 python stand_up_lazy.py
