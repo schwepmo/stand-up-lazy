@@ -1,4 +1,9 @@
+altgraph==0.17.4
+macholib==1.16.3
+packaging==25.0
 plyer==2.1.0
+pyinstaller==6.13.0
+pyinstaller-hooks-contrib==2025.4
 pyobjus==1.2.3
-# Editable Git install with no remote (stand_up_lazy==0.1.0)
--e /Users/scc/Development/stand_up_lazy
+setuptools==80.8.0
+sv-ttk==2.6.0

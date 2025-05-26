@@ -56,11 +56,11 @@ class StandUpApp:
         time_input_frame.pack(pady=(1, 0))
 
         # Labels and Entries for standing and sitting
-        ttk.Label(time_input_frame, text="Sitting:", font=("Helvetica", 10), anchor="e").pack(side=tk.LEFT, padx=(1, 0), pady=(5, 0))
-        self.sitting_time_entry = ttk.Entry(time_input_frame, textvariable=self.sitting_time, width=4, font=("Helvetica", 10))
+        ttk.Label(time_input_frame, text="Sitting:", font=("Helvetica", 14), anchor="e").pack(side=tk.LEFT, padx=(1, 0), pady=(5, 0))
+        self.sitting_time_entry = ttk.Entry(time_input_frame, textvariable=self.sitting_time, width=4, font=("Helvetica", 14))
         self.sitting_time_entry.pack(side=tk.LEFT, padx=(0, 1), pady=(5, 0))
-        ttk.Label(time_input_frame, text="Standing:", font=("Helvetica", 10), anchor="e").pack(side=tk.LEFT, padx=(1, 0), pady=(5, 0))
-        self.standing_time_entry = ttk.Entry(time_input_frame, textvariable=self.standing_time, width=4, font=("Helvetica", 10))
+        ttk.Label(time_input_frame, text="Standing:", font=("Helvetica", 14), anchor="e").pack(side=tk.LEFT, padx=(1, 0), pady=(5, 0))
+        self.standing_time_entry = ttk.Entry(time_input_frame, textvariable=self.standing_time, width=4, font=("Helvetica", 14))
         self.standing_time_entry.pack(side=tk.LEFT, padx=(0, 1), pady=(5, 0))
 
         # Timer label with larger font size
